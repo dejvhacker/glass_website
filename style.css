@@ -1,0 +1,195 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  h1 {
+    color: #426696;
+    font-weight: 600;
+    font-size: 3rem;
+    opacity: 0.8;
+  }
+
+  h2,
+  p {
+    color: #7758D1;
+    font-weight: 500;
+    opacity: 0.8;
+  }
+  
+  h3 {
+    color: #7758D1; 
+    font-weight: 600;
+    opacity: 0.8;
+  }
+  
+  /* main = background */
+  main {
+    font-family: "Poppins", sans-serif;
+    min-height: 100vh;
+    /* background: linear-gradient(to right top, #65dfc9, #6cdbeb); */
+    display: flex;
+    align-items: center; /* for section class "glass", only with display flex */
+    justify-content: center; /* for section class "glass", only with display flex */
+    background: radial-gradient(73.23% 106% at 34.94% 108.33%, #F7CBFD 0%, #7758D1 100%);
+  }
+  
+  /* glass = the center place */
+  .glass {
+    background: white;
+    min-height: 80vh;
+    width: 60%;
+    background: linear-gradient(
+      to right bottom,
+      rgba(255, 255, 255, 0.7), /* 70% clarity of left up corner */
+      rgba(255, 255, 255, 0.3)); /* 30% clarity of right down corner */
+    border-radius: 2rem; /* =20px */
+    z-index: 2;   /* push a element behind or before an another element; here circle1 and circle2 */
+    backdrop-filter: blur(2rem); /* clarity */
+    display: flex; /* for dashboard´s classes as vertical style */
+  }
+
+  /* circles with linear-gradient*/ 
+  .circle1,
+  .circle2 {
+    background: white;
+    background: linear-gradient(
+      to right bottom,
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.3));
+    height: 20rem; /* for circles height and width have to the same value */
+    width: 20rem;   /* for circles height and width have to the same value */
+    position: absolute;
+    border-radius: 50%;
+  }
+  
+  .circle1 {
+    top: 5%;
+    right: 15%;
+  }
+  .circle2 {
+    bottom: 5%;
+    left: 10%;
+  }
+
+  /* DASHBOARD */
+  .dashboard {
+    flex: 1; /* two dashboard`s classes left and right - vertical (w pionie) */
+    display: flex; /* dashboard´s classes horizontal */
+    flex-direction: column; /* dashboard´s classes horizontal */
+    align-items: center;
+    justify-content: space-evenly; /* something like padding for class in dashboard */
+    text-align: center;
+  /* background from .glass = 2 layers of glasses: 1 layer + 1 layer */
+    background: linear-gradient(
+      to right bottom,
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.3));
+    border-radius: 2rem 0rem 0rem 2rem;
+  }
+
+  .link {
+    display: flex;
+    margin: 2rem 0rem;
+    padding: 1rem 5rem;
+    align-items: center;
+  }
+
+  .link h2 {
+    padding: 0rem 2rem;
+  }
+  
+  .games {
+    flex: 2; /* for dashbord´s classes - left and center or left and right */
+  }
+  
+  .pro {
+    /* background: linear-gradient(to right top, #65dfc9, #6cdbeb); /*background from .main */
+    background: radial-gradient(73.23% 106% at 34.94% 108.33%, #F7CBFD 0%, #7758D1 100%);
+    border-radius: 2rem;
+    color: white; /* text color */
+    padding: 1rem;
+    position: relative; /* for (image) .pro img - image is now in the class */
+  }
+  
+  .pro img {
+    position: absolute;
+    top: -10%;
+    right: 10%;
+  }
+
+  /* .pro h2 = change size of '.pro' - now '.pro img' is inside '.pro' */
+  .pro h2 {
+    width: 40%;
+    color: white;
+    font-weight: 600;
+  }
+  
+  /* GAMES */
+  .status {
+    margin-bottom: 3rem;
+  }
+  
+  .status input {
+    background: linear-gradient(
+      to right bottom,
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.3));
+    border: none;
+    width: 50%;
+    padding: 0.5rem;
+    border-radius: 2rem;
+  }
+  
+  .games {
+    margin: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+  
+  .card {
+    display: flex;
+    background: linear-gradient(
+      to left top,
+      rgba(255, 255, 255, 0.8), /* it works together with box-shadow here */
+      rgba(255, 255, 255, 0.5));  /* it works together with box-shadow here */
+    border-radius: 1rem;
+    margin: 2rem 0rem; /* it makes space between sections */
+    padding: 2rem;
+    box-shadow: 6px 6px 20px rgba(122, 122, 122, 0.212);
+    justify-content: space-between; /* space 3 elements: left, center, right in the section vertical */
+  }
+  
+  /* .progress = like a loading button with 100% */
+  .progress {
+    background: linear-gradient(to right top, #7758D1, #426696);
+    width: 100%;
+    height: 25%;
+    border-radius: 1rem;
+    position: relative; /* it´s for .progress::after / position: absolute */
+    overflow: hidden; /* for the 60% on 100% effects - like 60% loading button */
+  }
+
+  /* .progress::after = like a loading button with 60% here */
+  .progress::after {
+    content: ""; /* for 'psycho' elements */
+    width: 100%;
+    height: 100%;
+    background: rgb(219, 215, 215);
+    position: absolute; /* it´s for .progress / position: relative */
+    left: 60%;
+  }
+  .card-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .percentage {
+    font-weight: bold;
+    background: linear-gradient(to right top, #7758D1, #426696);
+    -webkit-background-clip: text; /* convert background´s color (from .percentage) to text color */
+    -webkit-text-fill-color: transparent; /* it works with -webkit-background-clip: text */
+  }
