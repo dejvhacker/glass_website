@@ -48,6 +48,7 @@
     z-index: 2;   /* push a element behind or before an another element; here circle1 and circle2 */
     backdrop-filter: blur(2rem); /* clarity */
     display: flex; /* for dashboard´s classes as vertical style */
+    flex-wrap: wrap;
   }
 
   /* circles with linear-gradient*/ 
@@ -62,6 +63,7 @@
     width: 20rem;   /* for circles height and width have to the same value */
     position: absolute;
     border-radius: 50%;
+    flex-wrap: wrap;
   }
   
   .circle1 {
@@ -87,6 +89,7 @@
       rgba(255, 255, 255, 0.7),
       rgba(255, 255, 255, 0.3));
     border-radius: 2rem 0rem 0rem 2rem;
+    flex-wrap: wrap;
   }
 
   .link {
@@ -111,6 +114,7 @@
     color: white; /* text color */
     padding: 1rem;
     position: relative; /* for (image) .pro img - image is now in the class */
+    flex-wrap: wrap;
   }
   
   .pro img {
